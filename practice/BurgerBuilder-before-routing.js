@@ -18,6 +18,12 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
     state={
+        // ingredients:{
+        //     salad:0,
+        //     bacon:0,
+        //     cheese:0,
+        //     meat:0
+        // },
         ingredients:null,
         totalPrice: 4,
         purchasable:false,
@@ -28,7 +34,7 @@ class BurgerBuilder extends Component {
 
     componentDidMount(){
         console.log(this.props);
-        axios.get('https://burger-builder-project-a326b.firebaseio.com/ingredients.json')
+        axios.get('https://burger-builder-project-a326b.firebaseio.com/orders/ingredients.json')
             .then(response => {
                 this.setState({ingredients:response.data});
             })
@@ -89,18 +95,30 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = ()=>{
         //alert('You continue!');
-        const queryParams = [];
-        for(let i in this.state.ingredients){
-            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+        this.setState({loading:true});
+        const order ={
+            ingredients:this.state.ingredients,
+            price:this.state.totalPrice,
+            customer:{
+                name:'Sai Prasad',
+                address:{
+                    street:'Teststreet 1',
+                    zipcode:'75004',
+                    country:'India'
+                },
+                email:'test@test.com'
+            },
+            deliveryMethod:'fastest'
         }
-        queryParams.push('price=' + this.state.totalPrice);
-        const queryString = queryParams.join('&');
-
-        this.props.history.push({
-            pathname:'/checkout',
-            search:'?' + queryString
-        });
-        // this.props.history.push('/checkout');
+        axios.post('/orders.json',order)
+            .then(response=> {
+                //console.log(response);
+                this.setState({loading:false,purchasing:false});
+            })
+            .catch(error=>{
+                //console.log(error);
+                this.setState({loading:false,purchasing:false});
+            });
     }
 
     render() {
@@ -115,6 +133,16 @@ class BurgerBuilder extends Component {
 
         //After trying to fetch data from firebase
         let orderSummary = null;
+
+        // orderSummary = <OrderSummary 
+        //                     ingredients={this.state.ingredients}
+        //                     purchaseCanceled={this.purchaseCancelHandler}
+        //                     purchaseContinued={this.purchaseContinueHandler}
+        //                     price={this.state.totalPrice} />;
+
+        // if(this.state.loading){
+        //     orderSummary= <Spinner />
+        // }
 
         let burger = this.state.error ? <p style={{textAlign:"center"}}>Ingredients can't be loaded!</p> : <Spinner /> ;
 
@@ -149,6 +177,17 @@ class BurgerBuilder extends Component {
                     modalClosed={this.purchaseCancelHandler}>
                     {orderSummary}
                 </Modal>
+                
+                {/* AFTER ASSIGNING INGREDIENTS TO NULL(WE WANT TO FETCH DATA FROM FIREBASE) IT WILL SHOW ERROR
+                <Burger ingredients={this.state.ingredients}/>
+                <BuildControls 
+                    ingredientAdded={this.addIngredientHandler}
+                    ingredientRemove={this.removeIngredientHandler}
+                    disabled={disabledInfo}
+                    purchasable={this.state.purchasable}
+                    price={this.state.totalPrice}
+                    ordered={this.purchaseHandler} /> */}
+
                 {burger}
             </Aux>
         );
