@@ -19,8 +19,8 @@ const burger = (props) => {
     //     transformedIngredients = <p>Please start adding ingredients!</p>
     // }
 
-    var flag=0;
-    for(var i=0;i<transformedIngredients.length;i++){
+    let flag=0;
+    for(let i=0;i<transformedIngredients.length;i++){
         var j = transformedIngredients[i];
         // console.log(j);
         if(j.length!==0){
