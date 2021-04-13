@@ -26,13 +26,6 @@
   <component name="ChangeListManager">
     <list default="true" id="722657ad-7e4b-4f31-a8b9-6591d08dc284" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +52,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,6 +68,8 @@
       <workItem from="1604431795091" duration="27000" />
       <workItem from="1604432487493" duration="2804000" />
       <workItem from="1606332231427" duration="248000" />
+      <workItem from="1608751732054" duration="2000" />
+      <workItem from="1616182195841" duration="114000" />
     </task>
     <servers />
   </component>
@@ -90,15 +86,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="468" y="267" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1600193800515">
+    <state x="265" y="117" key="SettingsEditor" timestamp="1616182299028">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
-    <state x="468" y="267" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1440.816@0.23.1440.816" timestamp="1600193800515" />
-    <state x="411" y="163" width="670" height="676" key="search.everywhere.popup" timestamp="1604433876418">
-      <screen x="0" y="23" width="1440" height="816" />
-    </state>
-    <state x="411" y="163" width="670" height="676" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1604433876418" />
+    <state x="265" y="117" key="SettingsEditor/0.23.1440.816@0.23.1440.816" timestamp="1616182299028" />
   </component>
 </project>
